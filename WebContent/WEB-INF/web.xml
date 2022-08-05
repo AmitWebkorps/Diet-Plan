@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>HealthyMeals</display-name>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <servlet>
+     	<servlet-name>ViewPlan</servlet-name>
+     	<servlet-class>com.healthymeal.controller.ViewPlan</servlet-class>
+     </servlet>
+	<servlet-mapping>
+		<servlet-name>ViewPlan</servlet-name>
+		<url-pattern>/ViewPlan</url-pattern>
+	</servlet-mapping>
+	
+	
+  <servlet>
+     	<servlet-name>Login</servlet-name>
+     	<servlet-class>com.healthymeal.controller.Login</servlet-class>
+     </servlet>
+	<servlet-mapping>
+		<servlet-name>Login</servlet-name>
+		<url-pattern>/Login</url-pattern>
+	</servlet-mapping>
+	
+	
+   <servlet>
+        <servlet-name>AddMeal</servlet-name>
+     	<servlet-class>com.healthymeal.controller.AddMeal</servlet-class>
+     </servlet>
+	<servlet-mapping>
+		<servlet-name>AddMeal</servlet-name>
+		<url-pattern>/AddMeal</url-pattern>
+	</servlet-mapping>
+	
+	
+     <servlet>
+	        <servlet-name>CreatePlan</servlet-name>
+	     	<servlet-class>com.healthymeal.controller.CreatePlan</servlet-class>
+     </servlet>
+	<servlet-mapping>
+		<servlet-name>CreatePlan</servlet-name>
+		<url-pattern>/CreatePlan</url-pattern>
+	</servlet-mapping>
+	
+	
+    <servlet>
+     	<servlet-name>Signup</servlet-name>
+     	<servlet-class>com.healthymeal.controller.Signup</servlet-class>
+     </servlet>
+	<servlet-mapping>
+		<servlet-name>Signup</servlet-name>
+		<url-pattern>/Signup</url-pattern>
+	</servlet-mapping>
+	
+	
+    <servlet>
+     	<servlet-name>AddMealPerDay</servlet-name>
+     	<servlet-class>com.healthymeal.controller.AddMealPerDay</servlet-class>
+     </servlet>
+	<servlet-mapping>
+		<servlet-name>AddMealPerDay</servlet-name>
+		<url-pattern>/AddMealPerDay</url-pattern>
+	</servlet-mapping>
+</web-app>
