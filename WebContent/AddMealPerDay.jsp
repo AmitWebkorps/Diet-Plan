@@ -32,7 +32,7 @@
 
 <title>Insert title here</title>
 </head>
-<body>
+<body class="bg-light">
 	<%@ include file="head.jsp"%>
 	<%
   String res=request.getParameter("res");

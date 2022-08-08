@@ -7,8 +7,8 @@
 				class="text-decoration-none text-light py-1 btn">Add Recipe </a></li>
 			<li class="mx-3"><a href="CreatePlans.jsp"
 				class="text-decoration-none text-light py-1 btn">Create Plans </a></li>
-			<li class="mx-3"><a href="CreatePlans.jsp"
-				class="text-decoration-none text-light py-1 btn">View Meal </a></li>
+			<li class="mx-3"><a href="ViewPlan"
+				class="text-decoration-none text-light py-1 btn">View Plans </a></li>
 		</ul>
 	</div>
 </div>

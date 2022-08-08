@@ -11,6 +11,24 @@
   </welcome-file-list>
   
   <servlet>
+     	<servlet-name>DeletePlan</servlet-name>
+     	<servlet-class>com.healthymeal.controller.DeletePlan</servlet-class>
+     </servlet>
+	<servlet-mapping>
+		<servlet-name>DeletePlan</servlet-name>
+		<url-pattern>/DeletePlan</url-pattern>
+	</servlet-mapping>
+	
+	 <servlet>
+     	<servlet-name>UserViewPlan</servlet-name>
+     	<servlet-class>com.healthymeal.controller.UserViewPlan</servlet-class>
+     </servlet>
+	<servlet-mapping>
+		<servlet-name>UserViewPlan</servlet-name>
+		<url-pattern>/UserViewPlan</url-pattern>
+	</servlet-mapping>
+  
+  <servlet>
      	<servlet-name>ViewPlan</servlet-name>
      	<servlet-class>com.healthymeal.controller.ViewPlan</servlet-class>
      </servlet>
@@ -19,6 +37,14 @@
 		<url-pattern>/ViewPlan</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+     	<servlet-name>ViewMeal</servlet-name>
+     	<servlet-class>com.healthymeal.controller.ViewMeal</servlet-class>
+     </servlet>
+	<servlet-mapping>
+		<servlet-name>ViewMeal</servlet-name>
+		<url-pattern>/ViewMeal</url-pattern>
+	</servlet-mapping>
 	
   <servlet>
      	<servlet-name>Login</servlet-name>
@@ -59,6 +85,7 @@
 		<url-pattern>/Signup</url-pattern>
 	</servlet-mapping>
 	
+
 	
     <servlet>
      	<servlet-name>AddMealPerDay</servlet-name>
@@ -68,4 +95,25 @@
 		<servlet-name>AddMealPerDay</servlet-name>
 		<url-pattern>/AddMealPerDay</url-pattern>
 	</servlet-mapping>
+
+   <servlet>
+     	<servlet-name>BuyPlan</servlet-name>
+     	<servlet-class>com.healthymeal.controller.BuyPlan</servlet-class>
+     </servlet>
+	<servlet-mapping>
+		<servlet-name>BuyPlan</servlet-name>
+		<url-pattern>/BuyPlan</url-pattern>
+	</servlet-mapping>
+   
+    <servlet>
+     	<servlet-name>BuyedPlan</servlet-name>
+     	<servlet-class>com.healthymeal.controller.BuyedPlan</servlet-class>
+     </servlet>
+	<servlet-mapping>
+		<servlet-name>BuyedPlan</servlet-name>
+		<url-pattern>/BuyedPlan</url-pattern>
+	</servlet-mapping>
+   
+	
+	
 </web-app>

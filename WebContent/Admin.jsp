@@ -25,7 +25,7 @@
 
 <title>Insert title here</title>
 </head>
-<body>
+<body class="bg-light">
 	<%@ include file="head.jsp"%>
 	<div class="container">
 		<div class="card p-4">

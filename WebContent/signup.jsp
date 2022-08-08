@@ -25,7 +25,7 @@
 
 <title>Insert title here</title>
 </head>
-<body>
+<body class="bg-light">
 	<%@ include file="head.jsp"%>
 	<div class="container">
 		<form action="signup">

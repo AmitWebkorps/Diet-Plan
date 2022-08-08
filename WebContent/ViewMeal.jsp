@@ -29,15 +29,15 @@
 
 <title>Insert title here</title>
 </head>
-<body>
+<body class="bg-light">
 	<%@ include file="head.jsp"%>
 	<%@ include file="Options.jsp"%>
 	<div class="container d-flex justify-content-around">
 		<div class=container>
-		   <img alt="meal image" src="images/Home_bg.png" width="350px" height="350px">
+		   <img alt="meal image" src="images/${meal.getMealImage()}" width="350px" height="350px">
 		</div>
 		<div class=container>
-		   <h5>Cold cofee</h5>
+		   <h2>${meal.getMealName()}</h2>
 		</div>
 	</div>
 

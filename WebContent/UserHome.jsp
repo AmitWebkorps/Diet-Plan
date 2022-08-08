@@ -28,6 +28,37 @@
 </head>
 <body class="bg-light">
 	<%@ include file="head.jsp"%>
+	<%
+  String s1=request.getParameter("res");
+  if(s1!=null)
+  {
+	  if(s1.equals("success"))
+	  {
+     %>
+	<div>
+		<p class="bg-primary text-white">Plan Buyed SuccessFully</p>
+	</div>
+	<%
+	
+	  }
+	  else if(s1.equals("Already"))
+	  {
+     %>
+	<div>
+		<p class="bg-primary text-white">Already Have an Active Plan</p>
+	</div>
+	<%
+	
+	  }
+	  else if(s1.equals("failer"))
+	  {
+     %>
+	<div>
+		<p class="bg-danger text-white">Something went wrong</p>
+	</div>
+	<%
+	  }
+  }%>
 	<%@ include file="UserOptions.jsp"%>
 
 </body>

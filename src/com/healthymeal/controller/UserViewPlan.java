@@ -13,9 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.healthymeal.dbConnectivity.DbConnectivity;
 import com.healthymeal.modal.Plans;
 
-import sun.security.mscapi.CKeyPairGenerator.RSA;
-
-public class ViewPlan extends HttpServlet {
+public class UserViewPlan extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //-----------------------------------------------------------//
@@ -38,7 +36,7 @@ public class ViewPlan extends HttpServlet {
 			}
 //-----------------------------------------------------------//
 			request.setAttribute("plans", plans);
-			request.getRequestDispatcher("ViewPlans.jsp").forward(request,response);
+			request.getRequestDispatcher("UserViewPlan.jsp").forward(request,response);
 	    }
 		catch(Exception e){
 			System.out.println(e);
