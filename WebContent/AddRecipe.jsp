@@ -26,7 +26,6 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
 	integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
 	crossorigin="anonymous"></script>
-
 <title>Insert title here</title>
 </head>
 <body class="bg-light">
@@ -62,17 +61,12 @@
 					id="formGroupExampleInput" placeholder="Enter your name"
 					name="mealname">
 			</div>
-
-			<div class="mb-3">
-				<label for="exampleFormControlTextarea1" class="form-label">Enter
-					Meal Recipe </label>
-				<textarea class="form-control" id="exampleFormControlTextarea1"
-					rows="3"></textarea>
-			</div>
+			
 			<button type="submit" class="btn btn-success mx-auto">Add
 				Recipe</button>
 		</form>
 	</div>
 
 </body>
+<script src="js/Ingredients.js" type="text/javascript"></script>
 </html>

@@ -37,7 +37,7 @@
 	<div class="container bg-white">
 		<div class="mt-5">
 			<div class="mt-5 text-muted">
-              <form action="BuyPlan" method="POST">
+              <form action="ViewPlanDetails" method="get">
 		       <h3>Buyed Plan:</h3>
 				<table class="table">
                   <thead>

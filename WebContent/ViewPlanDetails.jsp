@@ -1,6 +1,8 @@
-<%@page import="com.healthymeal.modal.MealDetails,java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ page import="java.util.ArrayList,com.healthymeal.modal.Meal" %>
+	
+<%@ taglib prefix = "c" uri ="http://java.sun.com/jstl/core_rt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,34 +35,36 @@
 <body class="bg-light">
 	<%@ include file="head.jsp"%>
 	<%@ include file="UserOptions.jsp"%>
-	<% ArrayList<MealDetails> meals =(ArrayList<MealDetails>)request.getAttribute("meal");%>
 	<div class="container-fluid">
 		<form action="AddMealPerDay" method="Post">
 			<table class="table">
 				<tr>
-					<th scope="col">S no.</th>
-					<th scope="col">Meal Name</th>
-					<th scope="col">Meal Image</th>
-					<th scope="col">Meal Price</th>
-					<th scope="col">Edit</th>
+					<th scope="col">Days</th>
+					<th scope="col">Breakfast</th>
+					<th scope="col">Morning snacks</th>
+					<th scope="col">Lunch</th>
+					<th scope="col">Afternoon snacks</th>
+					<th scope="col">Dinner</th>
+					<th scope="col">Hydration</th>
 				</tr>
 				<tbody>
 					<%
-					  
+					  ArrayList<Meal> meals =(ArrayList<Meal>)request.getAttribute("meal");
 					 for(int i=0;i<meals.size();i++)
 					 {%>
 						<tr>
 						    <td scope="row"><%=i+1%></td>
-							<td scope="row"><%= meals.get(i).getMealName() %></td>
-							<td scope="row"><img alt="meal image" src="images/<%= meals.get(i).getMealImage()%>" width="70px" height="70px"></td>
-							<td scope="row"><%= meals.get(i).getMealPrice()%></td>
-							
+							<td scope="row"><%= meals.get(i).getBreakFast()%></td>
+							<td scope="row"><%= meals.get(i).getMorningSnacks()%></td>
+							<td scope="row"><%= meals.get(i).getLunch()%></td>
+							<td scope="row"><%= meals.get(i).getAfternoonSnacks()%></td>
+							<td scope="row"><%= meals.get(i).getDinner()%></td>
+							<td scope="row"><%= meals.get(i).getHydration()%></td>
 	                    </tr>
 					<%}%>
 				</tbody>
 			</table>
 		</form>
 	</div>
-
 </body>
 </html>
