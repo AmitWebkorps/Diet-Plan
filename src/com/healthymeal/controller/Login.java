@@ -4,14 +4,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.healthymeal.dbConnectivity.DbConnectivity;
-import com.healthymeal.modal.User;
 
 //@WebServlet("/Login")
 public class Login extends HttpServlet {
@@ -46,8 +45,9 @@ public class Login extends HttpServlet {
 		//if user login
 				else
 				{
-					Cookie ck= new Cookie("email",username);
-                    response.addCookie(ck);
+                    HttpSession session=request.getSession(true);
+ 			         session.setAttribute("email", username);
+
 					response.sendRedirect("UserHome.jsp");
 				}
 //-----------------------------------------------------//

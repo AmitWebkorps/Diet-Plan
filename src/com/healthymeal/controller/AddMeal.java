@@ -31,11 +31,12 @@ public class AddMeal extends HttpServlet {
 		Part imagepart = request.getPart("meal-image");
 		String mealprice = request.getParameter("mealprice");
 		String mealtype = request.getParameter("mealtype");
+		String mealingredients = request.getParameter("ingredients");
 //---------------------------------------------------------------------------//
 
 		// creating Connection with database and Prepared Statement
 
-		PreparedStatement ps = DbConnectivity.connect("insert into meals values(?,?,?,?)");
+		PreparedStatement ps = DbConnectivity.connect("insert into meals values(?,?,?,?,?)");
 
 //---------------------------------------------------------------------------//
 		InputStream inputstream = null;
@@ -46,18 +47,19 @@ public class AddMeal extends HttpServlet {
 				inputstream = imagepart.getInputStream();
 				outputstream = new FileOutputStream(
 						"C:\\Users\\dell\\Documents\\workspace-sts-3.9.12.RELEASE\\HealthyMeals\\WebContent\\images\\"
-								+ mealname + ".png");
+								+ mealname+".png");
 				int bytes = 0;
 
 				// Reading and writing the image copying image to our folder
 				while ((bytes = inputstream.read()) != -1)
 					outputstream.write(bytes);
-				// ---------------------------------------------------------------------------//
+	// ---------------------------------------------------------------------------//
 
 				ps.setString(1, mealname);
-				ps.setString(2, mealname + ".png");
+				ps.setString(2, mealname +".png");
 				ps.setInt(3, Integer.parseInt(mealprice));
 				ps.setString(4, mealtype);
+				ps.setString(5, mealingredients);
 
 				int res = ps.executeUpdate();
 				if (res > 0) {

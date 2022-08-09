@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-	<%@ page import="java.util.ArrayList" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,55 +22,35 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
 	integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
 	crossorigin="anonymous"></script>
-<link rel="icon" type="image/x-icon" href="images\logo.png">
-<title>Healthy Meal</title>
+
+<title>Insert title here</title>
 </head>
 <body class="bg-light">
 	<%@ include file="head.jsp"%>
-	<%
-  String s1=request.getParameter("res");
-  if(s1!=null)
-  {
-	  if(s1.equals("success"))
-	  {
-     %>
-	<div>
-		<p class="bg-primary text-white">Plan Buyed SuccessFully</p>
-	</div>
-	<%
-	
-	  }
-	  else if(s1.equals("Already"))
-	  {
-     %>
-	<div>
-		<p class="bg-primary text-white">Already Have an Active Plan</p>
-	</div>
-	<%
-	
-	  }
-	  else if(s1.equals("failer"))
-	  {
-     %>
-	<div>
-		<p class="bg-danger text-white">Something went wrong</p>
-	</div>
-	<%
-	  }
-  }%>
-	<%@ include file="UserOptions.jsp"%>
-	<div class="container d-flex justify-content-around">
-		<div class="mt-5">
-			<div class="mt-5 text-muted">
-				<h1 class="fs-1">Healthy Eating</h1>
-				<p class="text-black-50 fs-5">Eat Good or Die Bad.</p>
+	<div class="container">
+		<form action="UserSignup">
+			<div class="mb-3">
+				<label for="formGroupExampleInput" class="form-label">Enter
+					Age</label> <input type="number" class="form-control"
+					id="formGroupExampleInput" placeholder="Enter your Age"
+					name="age">
 			</div>
-		</div>
-		<div class="mt-3">
-			<img alt="bg_image" src="images/Home_bg.png" width="300px" height="300px">
-		</div>
+			<div class="mb-3">
+				<label for="exampleInputEmail1" class="form-label">Enter
+					height</label> <input type="text" class="form-control"
+					id="exampleInputEmail1" aria-describedby="emailHelp"
+					name="height" placeholder="Enter your height">
+			</div>
+			<div class="mb-3">
+				<label for="exampleInputEmail1" class="form-label">Enter
+					weight</label> <input type="number" class="form-control"
+					id="exampleInputEmail1" aria-describedby="emailHelp"
+					name="weight" placeholder="Enter your weight">
+			</div>
+			<div class="mb-3">
+			<button type="submit" class="btn btn-success mx-auto">Save Details</button>
+		</form>
 	</div>
-	
 
 </body>
 </html>

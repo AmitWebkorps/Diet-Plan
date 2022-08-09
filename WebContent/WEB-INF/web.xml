@@ -113,6 +113,33 @@
 		<servlet-name>BuyedPlan</servlet-name>
 		<url-pattern>/BuyedPlan</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+     	<servlet-name>Logout</servlet-name>
+     	<servlet-class>com.healthymeal.controller.Logout</servlet-class>
+     </servlet>
+	<servlet-mapping>
+		<servlet-name>Logout</servlet-name>
+		<url-pattern>/Logout</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+     	<servlet-name>UserSignup</servlet-name>
+     	<servlet-class>com.healthymeal.controller.UserSignup</servlet-class>
+     </servlet>
+	<servlet-mapping>
+		<servlet-name>UserSignup</servlet-name>
+		<url-pattern>/UserSignup</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+     	<servlet-name>ViewPlanDetails</servlet-name>
+     	<servlet-class>com.healthymeal.controller.ViewPlanDetails</servlet-class>
+     </servlet>
+	<servlet-mapping>
+		<servlet-name>ViewPlanDetails</servlet-name>
+		<url-pattern>/ViewPlanDetails</url-pattern>
+	</servlet-mapping>
    
 	
 	

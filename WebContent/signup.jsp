@@ -28,7 +28,7 @@
 <body class="bg-light">
 	<%@ include file="head.jsp"%>
 	<div class="container">
-		<form action="signup">
+		<form action="Signup">
 			<div class="mb-3">
 				<label for="formGroupExampleInput" class="form-label">Enter
 					Name</label> <input type="text" class="form-control"
