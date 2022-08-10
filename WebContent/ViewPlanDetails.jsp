@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ page import="java.util.ArrayList,com.healthymeal.modal.Meal" %>
-	
-<%@ taglib prefix = "c" uri ="http://java.sun.com/jstl/core_rt" %>
+<%@ page import="java.util.ArrayList,com.healthymeal.entity.Meal"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -52,15 +52,15 @@
 					  ArrayList<Meal> meals =(ArrayList<Meal>)request.getAttribute("meal");
 					 for(int i=0;i<meals.size();i++)
 					 {%>
-						<tr>
-						    <td scope="row"><%=i+1%></td>
-							<td scope="row"><%= meals.get(i).getBreakFast()%></td>
-							<td scope="row"><%= meals.get(i).getMorningSnacks()%></td>
-							<td scope="row"><%= meals.get(i).getLunch()%></td>
-							<td scope="row"><%= meals.get(i).getAfternoonSnacks()%></td>
-							<td scope="row"><%= meals.get(i).getDinner()%></td>
-							<td scope="row"><%= meals.get(i).getHydration()%></td>
-	                    </tr>
+					<tr>
+						<td scope="row"><%=i+1%></td>
+						<td scope="row"><%= meals.get(i).getBreakFast()%></td>
+						<td scope="row"><%= meals.get(i).getMorningSnacks()%></td>
+						<td scope="row"><%= meals.get(i).getLunch()%></td>
+						<td scope="row"><%= meals.get(i).getAfternoonSnacks()%></td>
+						<td scope="row"><%= meals.get(i).getDinner()%></td>
+						<td scope="row"><%= meals.get(i).getHydration()%></td>
+					</tr>
 					<%}%>
 				</tbody>
 			</table>

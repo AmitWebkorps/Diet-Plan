@@ -32,23 +32,23 @@
 			<div class="mb-3">
 				<label for="formGroupExampleInput" class="form-label">Enter
 					Age</label> <input type="number" class="form-control"
-					id="formGroupExampleInput" placeholder="Enter your Age"
-					name="age">
+					id="formGroupExampleInput" placeholder="Enter your Age" name="age">
 			</div>
 			<div class="mb-3">
 				<label for="exampleInputEmail1" class="form-label">Enter
 					height</label> <input type="text" class="form-control"
-					id="exampleInputEmail1" aria-describedby="emailHelp"
-					name="height" placeholder="Enter your height">
+					id="exampleInputEmail1" aria-describedby="emailHelp" name="height"
+					placeholder="Enter your height">
 			</div>
 			<div class="mb-3">
 				<label for="exampleInputEmail1" class="form-label">Enter
 					weight</label> <input type="number" class="form-control"
-					id="exampleInputEmail1" aria-describedby="emailHelp"
-					name="weight" placeholder="Enter your weight">
+					id="exampleInputEmail1" aria-describedby="emailHelp" name="weight"
+					placeholder="Enter your weight">
 			</div>
 			<div class="mb-3">
-			<button type="submit" class="btn btn-success mx-auto">Save Details</button>
+				<button type="submit" class="btn btn-success mx-auto">Save
+					Details</button>
 		</form>
 	</div>
 

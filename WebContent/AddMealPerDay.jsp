@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@ page import="java.util.ArrayList" %>
-	
-<%@ taglib prefix = "c" uri ="http://java.sun.com/jstl/core_rt" %>
+<%@ page import="java.util.ArrayList"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -59,7 +59,8 @@
 	  {
 	%>
 	<div>
-		<p class="bg-warning text-white">Duplicate Plan Name: This name is already being used</p>
+		<p class="bg-warning text-white">Duplicate Plan Name: This name is
+			already being used</p>
 	</div>
 	<% 	  
 	  }
@@ -69,7 +70,7 @@
 
 	<div class="container-fluid">
 		<form action="AddMealPerDay" method="Post">
-		  <div class="mb-3">
+			<div class="mb-3">
 				<label for="formGroupExampleInput" class="form-label">Enter
 					Plan Name</label> <input type="text" class="form-control"
 					id="formGroupExampleInput" placeholder="Enter plan name"
@@ -85,11 +86,10 @@
 				<label for="formGroupExampleInput" class="form-label">Enter
 					weight range from:</label> <input type="Number" class="form-control"
 					id="formGroupExampleInput" placeholder="Enter plan weight"
-					name="weightFrom" required>
-					<label for="formGroupExampleInput" class="form-label">to :</label> 
-					<input type="Number" class="form-control"
-					id="formGroupExampleInput" placeholder="Enter plan weight"
-					name="weightTo" required>
+					name="weightFrom" required> <label
+					for="formGroupExampleInput" class="form-label">to :</label> <input
+					type="Number" class="form-control" id="formGroupExampleInput"
+					placeholder="Enter plan weight" name="weightTo" required>
 			</div>
 			<table class="table">
 				<tr>
@@ -114,13 +114,14 @@
 						 {
 						  ArrayList<String> meals =(ArrayList<String>)request.getAttribute("mealName");
 						 %>
-						<td><select class="form-select" 
-							aria-label="Default select example" name="Day<%=i%>Meal<%=j%>" required>
+						<td><select class="form-select"
+							aria-label="Default select example" name="Day<%=i%>Meal<%=j%>"
+							required>
 								<option value="">None</option>
-						   <%for(String data:meals) {%>
+								<%for(String data:meals) {%>
 								<option value="<%=data%>"><%=data%></option>
-							<%} %>
-							
+								<%} %>
+
 						</select></td>
 						<%} %>
 

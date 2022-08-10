@@ -1,4 +1,4 @@
-package com.healthymeal.modal;
+package com.healthymeal.entity;
 
 public class Meal {
    String breakFast;

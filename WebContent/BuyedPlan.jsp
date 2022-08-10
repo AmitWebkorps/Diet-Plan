@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-	<%@ page import="java.util.ArrayList,com.healthymeal.modal.Plans" %>
+<%@ page import="java.util.ArrayList,com.healthymeal.entity.Plans"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,7 +29,7 @@
 <body class="bg-light">
 	<%@ include file="head.jsp"%>
 	<%@ include file="UserOptions.jsp"%>
-                  <%
+	<%
                    Plans plans=(Plans)request.getAttribute("plan");
                   if(plans!=null)
                   {
@@ -37,40 +37,46 @@
 	<div class="container bg-white">
 		<div class="mt-5">
 			<div class="mt-5 text-muted">
-              <form action="ViewPlanDetails" method="get">
-		       <h3>Buyed Plan:</h3>
-				<table class="table">
-                  <thead>
-                   <tr>
-                   <th scope="col">Plan Name</th>
-                   <th scope="col">Plan Days</th>
-                   <th scope="col">Plan Price</th>
-                   <th scope="col">Details</th>
-                   </tr>
-                  </thead>
-                  <tbody>
-                  <tr>
-                 <td scope="col"> 
-                         <div class="col-sm-10">
-                                 <input type="text" readonly class="form-control-plaintext" name="planName" id="staticEmail" value="<%=plans.getPlanName()%>">
-                        </div>
-                  </td>
-                  <td scope="col"> 
-                         <div class="col-sm-10">
-                                 <input type="text" readonly class="form-control-plaintext" name="planDays" id="staticEmail" value="<%=plans.getPlanDays()%>">
-                        </div>
-                  </td>
-                  <td scope="col"> 
-                         <div class="col-sm-10">
-                                 <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="<%=plans.getPlanPrice()%>Rs">
-                        </div>
-                  </td>
-                  
-                   <td scope="col"><input type="submit"  value="View Details" class="btn btn-success"></td>
-                  </tr>
-                  </tbody>
-                  </table>
-                  </form>
+				<form action="ViewPlanDetails" method="get">
+					<h3>Buyed Plan:</h3>
+					<table class="table">
+						<thead>
+							<tr>
+								<th scope="col">Plan Name</th>
+								<th scope="col">Plan Days</th>
+								<th scope="col">Plan Price</th>
+								<th scope="col">Details</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td scope="col">
+									<div class="col-sm-10">
+										<input type="text" readonly class="form-control-plaintext"
+											name="planName" id="staticEmail"
+											value="<%=plans.getPlanName()%>">
+									</div>
+								</td>
+								<td scope="col">
+									<div class="col-sm-10">
+										<input type="text" readonly class="form-control-plaintext"
+											name="planDays" id="staticEmail"
+											value="<%=plans.getPlanDays()%>">
+									</div>
+								</td>
+								<td scope="col">
+									<div class="col-sm-10">
+										<input type="text" readonly class="form-control-plaintext"
+											id="staticEmail" value="<%=plans.getPlanPrice()%>Rs">
+									</div>
+								</td>
+
+								<td scope="col"><input type="submit" value="View Details"
+									class="btn btn-success"></td>
+							</tr>
+						</tbody>
+					</table>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -78,8 +84,8 @@
       else
       {
        %>
-          <h1>No Data Found</h1>
-       <%
+	<h1>No Data Found</h1>
+	<%
       }
 	%>
 </body>
