@@ -56,7 +56,8 @@
 			</div>
 		</div>
 		<div class="mt-3">
-			<img alt="bg_image" src="images/Home_bg.png" width="450px" height="450px">
+			<img alt="bg_image" src="images/Home_bg.png" width="450px"
+				height="450px">
 		</div>
 	</div>
 </body>

@@ -1,10 +1,26 @@
-package com.healthymeal.modal;
+package com.healthymeal.entity;
+
+import javax.servlet.http.Part;
 
 public class MealDetails {
-    String mealName;
-    String mealPrice;
-    String mealType;
-    String mealImage;
+    private String mealName;
+    private String mealPrice;
+    private String mealType;
+    private String mealImage;
+    private Part mealImagePart;
+    private String mealIngredients;
+	public String getMealIngredients() {
+		return mealIngredients;
+	}
+	public void setMealIngredients(String mealIngredients) {
+		this.mealIngredients = mealIngredients;
+	}
+	public Part getMealImagePart() {
+		return mealImagePart;
+	}
+	public void setMealImagePart(Part mealImagePart) {
+		this.mealImagePart = mealImagePart;
+	}
 	public String getMealImage() {
 		return mealImage;
 	}

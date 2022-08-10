@@ -61,7 +61,7 @@
 					id="formGroupExampleInput" placeholder="Enter your name"
 					name="mealname">
 			</div>
-			
+
 			<button type="submit" class="btn btn-success mx-auto">Add
 				Recipe</button>
 		</form>

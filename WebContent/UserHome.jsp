@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-	<%@ page import="java.util.ArrayList" %>
+<%@ page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -68,10 +68,11 @@
 			</div>
 		</div>
 		<div class="mt-3">
-			<img alt="bg_image" src="images/Home_bg.png" width="300px" height="300px">
+			<img alt="bg_image" src="images/Home_bg.png" width="300px"
+				height="300px">
 		</div>
 	</div>
-	
+
 
 </body>
 </html>

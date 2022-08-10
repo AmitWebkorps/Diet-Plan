@@ -1,40 +1,33 @@
 package com.healthymeal.controller;
 
 import java.io.IOException;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.healthymeal.dbConnectivity.DbConnectivity;
-
+import com.healthymeal.model.PlanDetailsModel;
 
 public class DeletePlan extends HttpServlet {
 	private static final long serialVersionUID = 1L;
- 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-  //---------------------------------------------------------------------//
-		String planName=request.getParameter("planName");
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		//getting data from html page 
+		String planName = request.getParameter("planName");
 		
- //---------------------------------------------------------------------//
-		PreparedStatement pStatement=DbConnectivity.connect("delete from plans where planName=?");
-		try {
-			pStatement.setString(1,planName );
- //---------------------------------------------------------------------//
-			int res=pStatement.executeUpdate();
-			if(res>0)
-				response.sendRedirect("ViewPlan");
-//---------------------------------------------------------------------//
-			else
-				throw new SQLException();
-				
-		} catch (SQLException e) {
-			System.out.println(e);
-		}
+		// Creating model object and calling method 
+		PlanDetailsModel planDetailsModel = new PlanDetailsModel();
+        boolean deleteResponse = planDetailsModel.deletePlan(planName);
+        
+        //Response code 
+		if (deleteResponse)
+			request.setAttribute("respond", "Deleted Successfully");
+		else
+			request.setAttribute("respond", "Something went Wrong");
+		request.getRequestDispatcher("ViewPlan").forward(request, response);
+
 	}
 
 }

@@ -82,21 +82,22 @@
 				</select>
 			</div>
 			<div class="mb-3">
-				<label for="exampleFormControlTextarea1" class="form-label">Core Ingredients List
-				 </label>
-				<textarea class="form-control" id="output"
-					rows="3" name="ingredients" readonly></textarea>
+				<label for="exampleFormControlTextarea1" class="form-label">Core
+					Ingredients List </label>
+				<textarea class="form-control" id="output" rows="3"
+					name="ingredients" readonly></textarea>
 			</div>
 			<div class="mb-3">
 				<label for="formGroupExampleInput" class="form-label">Enter
-					Core Ingredients</label> <input type="text" class="form-control"
-					id="input" placeholder="Enter Core Ingredients"  value="">
-				<button type="button" class="btn btn-danger mt-3" onClick="addIngredients()" >Add Ingredients</button>
+					Core Ingredients</label> <input type="text" class="form-control" id="input"
+					placeholder="Enter Core Ingredients" value="">
+				<button type="button" class="btn btn-danger mt-3"
+					onClick="addIngredients()">Add Ingredients</button>
 			</div>
 			<button type="submit" class="btn btn-success mx-auto">Add
 				Meal</button>
 		</form>
 	</div>
-<script src="js/Ingredients.js" type="text/javascript"></script>
+	<script src="js/Ingredients.js" type="text/javascript"></script>
 </body>
 </html>

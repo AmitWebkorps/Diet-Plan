@@ -1,4 +1,4 @@
-<%@page import="com.healthymeal.modal.MealDetails,java.util.ArrayList"%>
+<%@page import="com.healthymeal.entity.MealDetails,java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -49,13 +49,15 @@
 					  
 					 for(int i=0;i<meals.size();i++)
 					 {%>
-						<tr>
-						    <td scope="row"><%=i+1%></td>
-							<td scope="row"><%= meals.get(i).getMealName() %></td>
-							<td scope="row"><img alt="meal image" src="images/<%= meals.get(i).getMealImage()%>" width="70px" height="70px"></td>
-							<td scope="row"><%= meals.get(i).getMealPrice()%></td>
-							
-	                    </tr>
+					<tr>
+						<td scope="row"><%=i+1%></td>
+						<td scope="row"><%= meals.get(i).getMealName() %></td>
+						<td scope="row"><img alt="meal image"
+							src="images/<%= meals.get(i).getMealImage()%>" width="70px"
+							height="70px"></td>
+						<td scope="row"><%= meals.get(i).getMealPrice()%></td>
+
+					</tr>
 					<%}%>
 				</tbody>
 			</table>
