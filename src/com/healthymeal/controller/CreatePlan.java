@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.healthymeal.model.PlanDetailsModel;
+import com.healthymeal.model.MealDetailsModel;
 
 //@WebServlet("/CreatePlan")
 public class CreatePlan extends HttpServlet {
@@ -18,8 +18,8 @@ public class CreatePlan extends HttpServlet {
 			throws ServletException, IOException {
 		// Creating ArrayList for storing all available meals for Displaying on JSP page
 		// from model Class
-		PlanDetailsModel planDetailsModel = new PlanDetailsModel();
-		ArrayList<String> mealName = planDetailsModel.createPlan();
+		MealDetailsModel mealDetailsModel= new MealDetailsModel();
+		ArrayList<String> mealName = mealDetailsModel.getMealName();
 
 		request.setAttribute("mealName", mealName);
 		// Forward to to the JSP file.

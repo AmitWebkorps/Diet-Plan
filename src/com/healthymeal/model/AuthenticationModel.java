@@ -1,9 +1,10 @@
 package com.healthymeal.model;
 
 import java.sql.ResultSet;
-import com.healthymeal.dbConnectivity.DbConnectivity;
+
 import com.healthymeal.entity.Login;
 import com.healthymeal.entity.User;
+import com.healthymeal.util.DbConnectivity;
 
 public class AuthenticationModel {
 	

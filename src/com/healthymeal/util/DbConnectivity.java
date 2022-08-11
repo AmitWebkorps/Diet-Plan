@@ -1,4 +1,4 @@
-package com.healthymeal.dbConnectivity;
+package com.healthymeal.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
