@@ -28,7 +28,7 @@ public class UserSignup extends HttpServlet {
 		user.setAge(Integer.parseInt(age));
 		user.setHeight(Double.parseDouble(height));
 		user.setWeight(Integer.parseInt(weight));
-
+        user.setEmail(email);
 		// model class
 		AuthenticationModel authenticationModel = new AuthenticationModel();
 		boolean res = authenticationModel.setUserDetails(user);

@@ -35,12 +35,13 @@ public class BuyPlan extends HttpServlet {
 			Plans plans = new Plans();
 			plans.setPlanName(planName);
 			plans.setPlanDays(planDays);
-
+			flag = false;
 			flag = planDetailsModel.buyPlan(plans, userEmail);
-			if (flag)
+			if (flag) {
 				response.sendRedirect("UserHome.jsp?res=success");
-			else
+			} else {
 				response.sendRedirect("UserHome.jsp?res=failer");
+			}
 		} else {
 			response.sendRedirect("UserHome.jsp?res=Already");
 		}

@@ -96,8 +96,10 @@ public class PlanDetailsModel {
 	public boolean checkBuyedPlan(String userEmail) {
 		try {
 			ResultSet rs = DbConnectivity.query("select BuyedPlan from user where email=?", userEmail);
-			if (rs.next() && rs.getString(1) == null) {
+			if (rs.next()) {
+			if(rs.getString(1) == null) {
 				return true;
+			}
 			}
 		} catch (Exception e) {
 			System.out.println(e);
