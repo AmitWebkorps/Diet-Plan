@@ -1,11 +1,12 @@
 package com.healthymeal.model;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.healthymeal.dbConnectivity.DbConnectivity;
 import com.healthymeal.entity.Meal;
 import com.healthymeal.entity.Plans;
+import com.healthymeal.util.DbConnectivity;
 
 public class PlanDetailsModel {
 
@@ -46,18 +47,19 @@ public class PlanDetailsModel {
 	}
 
 	// create Plan
-	public ArrayList<String> createPlan() {
-		ArrayList<String> mealName = new ArrayList<>();
+	public boolean createPlan(Plans plan) {
 		try {
-			// getting value from database and storing it in the ArrayList
-			ResultSet rs = DbConnectivity.query("Select * from meals");
-			while (rs.next()) {
-				mealName.add(rs.getString(1));
-			}
+
+			int respon = DbConnectivity.update(
+					"insert into Plans(planname,plandays,planprice,weightFrom,weightTo) value(?,?,?,?,?)",
+					plan.getPlanName(), plan.getPlanDays(), plan.getPlanPrice(), plan.getWeightFrom(),
+					plan.getWeightTo());
+			if (respon > 0)
+				return true;
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-		return mealName;
+		return false;
 	}
 
 	// delete plan
@@ -72,7 +74,6 @@ public class PlanDetailsModel {
 		return false;
 	}
 
-	
 	// get user buyed Plan
 	public Plans getBuyedPlan(String email) {
 		Plans plans = null;
@@ -90,5 +91,54 @@ public class PlanDetailsModel {
 			System.out.println(e);
 		}
 		return plans;
+	}
+
+	public boolean checkBuyedPlan(String userEmail) {
+		try {
+			ResultSet rs = DbConnectivity.query("select BuyedPlan from user where email=?", userEmail);
+			if (rs.next() && rs.getString(1) == null) {
+				return true;
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return false;
+	}
+
+	public boolean buyPlan(Plans plans, String userEmail) {
+		try {
+			int res = DbConnectivity.update("update user set BuyedPlan=? , " + "planday=? where email=? ",
+					plans.getPlanName(), plans.getPlanDays(), userEmail);
+			if (res > 0)
+				return true;
+		} catch (SQLException e) {
+			System.out.println(e);
+		}
+		return false;
+	}
+
+	public boolean setPLanDeatils(String planName, ArrayList<Meal> mealObject) {
+
+		ResultSet rs;
+		try {
+			rs = DbConnectivity.query("select planid from plans where planName=?", planName);
+			if (rs.next()) {
+				String planId = rs.getString(1);
+				if (planId != null) {
+					for (int count = 0; count < mealObject.size(); count++) {
+
+						DbConnectivity.update("insert into PlanPerDay() values(?,?,?,?,?,?,?,?)", planId,
+								"" + count + 1, mealObject.get(count).getBreakFast(),
+								mealObject.get(count).getMorningSnacks(), mealObject.get(count).getLunch(),
+								mealObject.get(count).getAfternoonSnacks(), mealObject.get(count).getDinner(),
+								mealObject.get(count).getHydration());
+					}
+					return true;
+				}
+			}
+		} catch (SQLException e) {
+			System.out.println(e);
+		}
+		return false;
 	}
 }

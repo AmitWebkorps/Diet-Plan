@@ -9,8 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.healthymeal.dbConnectivity.DbConnectivity;
 import com.healthymeal.entity.Meal;
+import com.healthymeal.entity.Plans;
+import com.healthymeal.model.PlanDetailsModel;
+import com.healthymeal.util.DbConnectivity;
 
 //@WebServlet("/AddMealPerDay")
 public class AddMealPerDay extends HttpServlet {
@@ -33,39 +35,20 @@ public class AddMealPerDay extends HttpServlet {
 			mealObject.add(new Meal(meals[0], meals[1], meals[2], meals[3], meals[4], meals[5]));
 		}
 
-		try {
+		Plans plans = new Plans();
+		plans.setPlanName(planName);
+		plans.setPlanDays(days);
+		plans.setPlanPrice(planPrice);
+		plans.setWeightFrom(weightFrom);
+		plans.setWeightTo(weightTo);
 
-			int respon = DbConnectivity.update(
-					"insert into Plans(planname,plandays,planprice,weightFrom,weightTo) value(?,?,?,?,?)", planName,
-					days, planPrice, weightFrom, weightTo);
+		PlanDetailsModel planDetailsModel = new PlanDetailsModel();
+		boolean respon = planDetailsModel.createPlan(plans);
 
-			if (respon > 0) {
-				ResultSet rs = DbConnectivity.query("select planid from plans where planName=?", planName);
-
-				String planId = null;
-				if (rs.next()) {
-					planId = rs.getString(1);
-
-					int res[] = new int[mealObject.size()];
-
-					for (int count = 0; count < mealObject.size(); count++) {
-
-						res[count] = DbConnectivity.update("insert into PlanPerDay() values(?,?,?,?,?,?,?,?)", planId,
-								"" + count + 1, mealObject.get(count).getBreakFast(),
-								mealObject.get(count).getMorningSnacks(), mealObject.get(count).getLunch(),
-								mealObject.get(count).getAfternoonSnacks(), mealObject.get(count).getDinner(),
-								mealObject.get(count).getHydration());
-					}
-					response.sendRedirect("CreatePlans.jsp?res=success");
-				}
-			} else
-				response.sendRedirect("CreatePlans.jsp?res=failer");
-		} catch (Exception e) {
-			if (e.getMessage().equalsIgnoreCase("Duplicate entry 'first' for key 'plans.planName_UNIQUE")) {
-				response.sendRedirect("CreatePlans.jsp?res=duplicate");
-			}
+		if (respon && planDetailsModel.setPLanDeatils(planName, mealObject))
+			response.sendRedirect("CreatePlans.jsp?res=success");
+		else
 			response.sendRedirect("CreatePlans.jsp?res=failer");
-		}
 	}
 
 }

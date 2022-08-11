@@ -4,10 +4,12 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
-import com.healthymeal.dbConnectivity.DbConnectivity;
 import com.healthymeal.entity.MealDetails;
+import com.healthymeal.util.DbConnectivity;
 
 public class MealDetailsModel {
 
@@ -42,4 +44,40 @@ public class MealDetailsModel {
 		}
 		return false;
 	}
+
+	
+	
+	public ArrayList<MealDetails> getMealDetails()
+	{
+		ArrayList<MealDetails> aList = new ArrayList<>();
+		try {
+			ResultSet data = DbConnectivity.query("select * from meals");
+			while (data.next()) {
+				MealDetails meal = new MealDetails();
+				meal.setMealName(data.getString(1));
+				meal.setMealImage(data.getString(2));
+				meal.setMealPrice(data.getString(3));
+				meal.setMealType(data.getString(4));
+				aList.add(meal);
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return aList;
+	}
+	
+	public ArrayList<String> getMealName() {
+		ArrayList<String> mealName = new ArrayList<>();
+		try {
+			// getting value from database and storing it in the ArrayList
+			ResultSet rs = DbConnectivity.query("Select * from meals");
+			while (rs.next()) {
+				mealName.add(rs.getString(1));
+			}
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		return mealName;
+	}
+
 }
